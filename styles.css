@@ -46,7 +46,7 @@ header{
 .link-active{
     font-weight: bold;
 }
-#output-div{
+#output-area-div{
     padding: 1%;
     font-size: larger;
     margin-bottom: 2%;
