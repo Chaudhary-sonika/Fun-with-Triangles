@@ -1,19 +1,19 @@
-const quizForm = document.querySelector(".quiz-form");
-const submitAnswerBtn = document.querySelector("#submit-answer-btn");
-const outputEl = document.querySelector("#output");
+const questionForm = document.querySelector(".question-form");
+const subBtn = document.querySelector("#submit-btn");
+const output = document.querySelector("#output");
 
-const correctAnswers = ["90", "right angled", "right-angled", "isosceles", "acute-angled", "isosceles", "65°", "false", "45°", "scalene"];
+const crtAns = [ "right-angled", "isosceles", "acute-angled", "isosceles", "65°", "false", "45°", "scalene", "90", "right angled"];
 
-function calculateScore() {
+function checkScore() {
     let score = 0;
     let index = 0;
-    const formResults = new FormData(quizForm);
+    const formResults = new FormData(questionForm);
     for (let value of formResults.values()){
-        if(value === correctAnswers[index]){
+        if(value === crtAns[index]){
             score = score +1;
         } 
          index = index +1;
     }
-    outputEl.innerText = "Your score is " + score;
+    output.innerText = "Your score is " + score;
 }
-submitAnswerBtn.addEventListener("click", calculateScore);
+subBtn.addEventListener("click", checkScore);

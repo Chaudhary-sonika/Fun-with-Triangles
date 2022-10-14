@@ -1,6 +1,6 @@
 const sides = document.querySelectorAll(".side-input");
 const areaBtn = document.querySelector("#area-btn");
-const outputEl = document.querySelector("#output");
+const output = document.querySelector("#output");
 
 function calculateMultiplyOfSides(a,b) {
   const multiplyOfSides = a*b;
@@ -8,11 +8,16 @@ function calculateMultiplyOfSides(a,b) {
 }
 
 function calculateArea() {
+  if(sides[0].value > 0 && sides[1].value > 0){
     const multiplyOfSides = calculateMultiplyOfSides(
-        Number(sides[0].value), Number(sides[1].value));
-    const areaOfTriangle = multiplyOfSides/2;    
+      Number(sides[0].value), Number(sides[1].value));
+  const areaOfTriangle = multiplyOfSides/2;    
 
-    outputEl.innerText = "The area of a Triangle is " + areaOfTriangle +"cm²";
+  output.innerText = "The area of a Triangle is " + areaOfTriangle.toFixed(2) +"cm²";
+  } else {
+    output.innerText = "Enter valid values.";
+  }
+   
 }
 
 
